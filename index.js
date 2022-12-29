@@ -17,9 +17,11 @@ app.use(function(req, res, next) {
  /* ==================== INITIALISE ROUTES =======================*/
   const loginRoutes = require("./routes/login")
   const registerRoutes = require("./routes/registration")
+  const createOrderRoutes = require("./routes/createOrder")
 
 
   /* Connecting to Database */
+  const MongoDBURI="mongodb://localhost/LaundryApp ";
   mongoose
   .connect("mongodb+srv://root:mongo9597DB@cluster0.nsz5wgf.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
@@ -54,7 +56,7 @@ app.use("/orders",(req,res,next)=>{
 
 app.use("/",registerRoutes)
 app.use("/",loginRoutes)
-
+app.use("/",createOrderRoutes)
 
 app.listen(PORT,()=>{  
     console.log(`example app listening on port ${PORT}`);
