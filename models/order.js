@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    productType : {String},
-    quantity : {Number,default : 0},
-    washing : {Boolean,default: false },
-    ironing : {Boolean,default: false},
-    drywash: {Boolean,default: false},
-    chemicalwash : {Boolean,default: false}
+    productType : {type:String},
+    quantity : {type:Number,default : 0},
+    washing : {type:Boolean,default: false },
+    ironing : {type:Boolean,default: false},
+    drywash: {type:Boolean,default: false},
+    chemicalwash : {type:Boolean,default: false}
 })
 
 
 const orderSchema = new mongoose.Schema({
-    status : {String},
+    status : {type : String},
     products : {type : [productSchema]},
-    totalPrice : {Number,default: 0},
-    totalQuantity : {Number,default: 0},
-    user : {type: mongoose.Types.ObjectId, ref: 'user' }
+    totalPrice : {type :Number,default: 0},
+    totalQuantity : {type :Number,default: 0},
+    user : {type: mongoose.Types.ObjectId, ref: 'User' }
 })
 
 const Order = mongoose.model("Order",orderSchema)
