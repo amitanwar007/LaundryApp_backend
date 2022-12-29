@@ -17,7 +17,8 @@ app.use(function(req, res, next) {
  /* ==================== INITIALISE ROUTES =======================*/
   const loginRoutes = require("./routes/login")
   const registerRoutes = require("./routes/registration")
-
+  const orderRoutes = require("./routes/orders")
+  
 
   /* Connecting to Database */
   mongoose
