@@ -18,6 +18,7 @@ app.use(function(req, res, next) {
   const loginRoutes = require("./routes/login")
   const registerRoutes = require("./routes/registration")
   const orderRoutes = require("./routes/orders")
+  const createOrderRoutes = require("./routes/createOrder")
   
 
   /* Connecting to Database */
@@ -55,6 +56,8 @@ app.use("/orders",(req,res,next)=>{
 
 app.use("/",registerRoutes)
 app.use("/",loginRoutes)
+app.use("/",createOrderRoutes)
+app.use("/",orderRoutes)
 
 
 app.listen(PORT,()=>{  
