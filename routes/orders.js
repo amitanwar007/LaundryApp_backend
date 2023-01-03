@@ -60,29 +60,6 @@ router.get("/orders/:orderId", async (req, res) => {
     }
 })
 
-/* ******************************* CREATE ORDER ***************************************/
-
-router.post("/orders", async (req, res) => {
-    try {
-        const order = await Order.create({
-            user: req.user,
-            status: req.body.status,
-            products: req.body.products,
-            totalPrice: req.body.totalPrice,
-            totalQuantity: req.body.totalQuantity
-        })
-        //console.log(order);
-        return res.status(200).json({
-            status: "Order is created",
-            data: order
-        })
-    } catch (e) {
-        return res.status(500).json({
-            status: "Failed",
-            message: e.message
-        })
-    }
-})
 
 
 module.exports = router
