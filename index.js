@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 
   /* Connecting to Database */
   mongoose
-  .connect("mongodb+srv://root:mongo9597DB@cluster0.nsz5wgf.mongodb.net/?retryWrites=true&w=majority", {
+  .connect("mongodb+srv://root-instaclone:instacloneHKA@cluster0.vqsgmeu.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
     })
